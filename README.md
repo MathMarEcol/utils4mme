@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# utils4mme <a href='https://github.com/MathMarEcol/utils4mme'><img src='man/figures/MME_Hex.png.png' align="right" height="150" /></a>
+# utils4mme <a href='https://github.com/MathMarEcol/utils4mme'><img src='man/figures/MME_Hex.png' align="right" height="150" /></a>
 
 <!-- badges: start -->
 
