@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# utils4mme
+# utils4mme <a href='https://github.com/MathMarEcol/utils4mme'><img src='man/figures/MME_Hex.png.png' align="right" height="150" /></a>
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
