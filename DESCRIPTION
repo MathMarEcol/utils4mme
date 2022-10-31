@@ -1,6 +1,6 @@
 Package: utils4mme
 Title: A collection of utilities developed by and for the Mathematical Marine Ecology Lab
-Version: 0.0.0.9000
+Version: 0.0.1.0000
 Authors@R: 
     person("Jason", "Everett", , "Jason.Everett@uq.edu.au", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-6681-8054"))

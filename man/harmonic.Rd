@@ -2,13 +2,23 @@
 % Please edit documentation in R/harmonic.R
 \name{harmonic}
 \alias{harmonic}
-\title{Harmonic is to fit Hour and DOY}
+\title{For use in models to create a circular predictor}
 \usage{
 harmonic(theta, k = 4)
 }
 \arguments{
-\item{k}{}
+\item{theta}{Paramter to model in radians}
+
+\item{k}{degrees of freedom}
+}
+\value{
+A harmonic function
 }
 \description{
-Harmonic is to fit Hour and DOY
+This function is for use in models to create a circular predictor
+}
+\examples{
+theta = 2
+k = 1
+df <- harmonic(theta = 2, k = 1)
 }

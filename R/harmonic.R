@@ -10,7 +10,7 @@
 #' @examples
 #' theta = 2
 #' k = 1
-#' df <- pr_harmonic(theta = 2, k = 1)
+#' df <- harmonic(theta = 2, k = 1)
 harmonic <- function (theta, k = 4) {
   X <- matrix(0, length(theta), 2 * k)
   nam <- as.vector(outer(c("c", "s"), 1:k, paste, sep  = ""))
