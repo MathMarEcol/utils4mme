@@ -8,9 +8,13 @@
 #' @export
 #'
 #' @examples
+#' df <- data.frame(lon = c(150, 160),
+#'                  lat = c(-32, -38)) %>%
+#'   sf::st_as_sf(coords = c("lon", "lat"), crs = "EPSG:4326") %>%
+#'   match_longhurst()
 match_longhurst <- function(df){
 
-  longh <- longhurst %>%
+  longh <- utils4mme::longhurst %>%
     sf::st_transform(sf::st_crs(df)) # Transform to the projection of the input
 
   nr <- sf::st_nearest_feature(df, longh)

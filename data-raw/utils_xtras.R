@@ -65,6 +65,9 @@ SpatPlan_validate_FBNAs <- function(spp, datab = "fishbase"){
 }
 
 
+
+
+
 #' Crop AquaMaps Data
 #'
 #' @param df The AquaMaps `stars` object from `SpatPlan_Get_AquaMaps`
@@ -75,7 +78,7 @@ SpatPlan_validate_FBNAs <- function(spp, datab = "fishbase"){
 #'
 #' @examples
 #' @importFrom rlang .data
-SpatPlan_Crop_AQM <- function(df, spp, extent){
+Crop_AQM <- function(df, spp, extent){
 
   cropped <- df %>%
     sf::st_crop(extent, crop = TRUE) %>%  # TODO replace ex_sf with a polygon to deal with EEZ or coastal areas
@@ -94,16 +97,6 @@ SpatPlan_Crop_AQM <- function(df, spp, extent){
   cropped <- cropped %>%
     dplyr::filter({rs == nc} == FALSE) # Remove Rows with all NAs (except geometry)
 
-  # Removed this code so I could get rid of . for RMD checks
-  # cropped <- df %>%
-  #   sf::st_crop(extent, crop = TRUE) %>%  # TODO replace ex_sf with a polygon to deal with EEZ or coastal areas
-  #   stars:::slice.stars(along = "band", index = spp$SpeciesIDNum) %>% # indexes rows based on SpeciesIDNum
-  #   stars::st_as_stars() %>% # loads it into memory
-  #   stars::st_set_dimensions("band", values = spp$longnames) %>%
-  #   sf::st_as_sf(na.rm = FALSE, as_points = FALSE, merge = FALSE) %>%
-  #   dplyr::filter(sf::st_drop_geometry(.) %>%
-  #                   is.na(.) %>%
-  #                   {rowSums(.) == ncol(.)} == FALSE) # Remove Rows with all NAs (except geometry)
-
   return(cropped)
 }
+

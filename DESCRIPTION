@@ -1,11 +1,23 @@
 Package: utils4mme
 Title: A collection of utilities developed by and for the Mathematical Marine Ecology Lab
-Version: 0.0.1.0000
+Version: 0.0.2
 Authors@R: 
-    person("Jason", "Everett", , "Jason.Everett@uq.edu.au", role = c("aut", "cre"),
+    person("Jason D.", "Everett", , "Jason.Everett@uq.edu.au", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-6681-8054"))
 Description: A collection of utilities developed by and for the Mathematical Marine Ecology Lab (MME) at the University of Queensland. They are intended for use within the lab to facilitate ease of code-sharing and reducing the amount of repetitive code that must be maintained. The authors of this package compiled the functions and maintain the package, but the author of the individual functions are indicated in the function help.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
+Imports: 
+    dplyr,
+    magrittr,
+    readr,
+    rlang,
+    sf,
+    stars,
+    terra,
+    tidyselect
+Depends: 
+    R (>= 2.10)
+LazyData: true

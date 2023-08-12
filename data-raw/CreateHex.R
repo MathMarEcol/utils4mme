@@ -20,7 +20,7 @@ hexSticker::sticker(p,
         # p_y = 1.7,
         p_color = "white",
         s_x = 1,
-        s_y = 0.8,
+        s_y = 0.9,
         s_width = 5,
         s_height = 2,
         h_fill = "black",
@@ -29,3 +29,4 @@ hexSticker::sticker(p,
         u_size = 5,
         u_color = "white",
         filename="man/figures/MME_Hex.png")
+
