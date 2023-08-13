@@ -2,8 +2,7 @@
 % Please edit documentation in R/untibble.R
 \name{untibble}
 \alias{untibble}
-\title{Remove nonsense attributes if we are working for speed and memory efficiency.
-Written by Bill Venables (CSIRO/UQ)}
+\title{Remove nonsense attributes if we are working for speed and memory efficiency.}
 \usage{
 untibble(tibble)
 }
@@ -14,6 +13,10 @@ untibble(tibble)
 \code{df} A stripped down dataframe
 }
 \description{
-Remove nonsense attributes if we are working for speed and memory efficiency.
 Written by Bill Venables (CSIRO/UQ)
+}
+\examples{
+df <- tibble::tibble(x = c(1, 2), y = c("January", "February")) \%>\%
+  untibble()
+class(df)
 }

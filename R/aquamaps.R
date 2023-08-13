@@ -29,12 +29,12 @@
 #'   ggplot2::geom_sf(data = Aust, colour = "blue", fill = NA) +
 #'   ggplot2::geom_sf(data = PUs, colour = "black", fill = NA)
 #'
-#' AQM <- get_AquaMaps(PUs, MinD = 0, MaxD = 200,
+#' AQM <- match_AquaMaps(PUs, MinD = 0, MaxD = 200,
 #'                     Direc = file.path("~", "Nextcloud", "MME1DATA-Q1215", "SpatialLayers"))
 #'
 #' (gg <- spatialplanr::splnr_plot_featureNo(AQM, Aust))
 #' }
-get_AquaMaps <- function(PlanUnits,
+match_AquaMaps <- function(PlanUnits,
                          MinD = 0,
                          MaxD = 200, # Do epipelagic by default
                          Direc = file.path("~", "SpatPlan_Data")){ # No longitundinal limits by default
@@ -102,6 +102,7 @@ get_AquaMaps <- function(PlanUnits,
 #'
 #' @return An `sf` object cropped to `extent`
 #' @importFrom rlang .data
+#' @noRd
 #'
 #' @examples
 crop_AquaMaps <- function(df, spp, extent){

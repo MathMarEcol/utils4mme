@@ -12,8 +12,8 @@
 #' df <- data.frame(lon = c(150, 160),
 #'                  lat = c(-32, -38)) %>%
 #'   sf::st_as_sf(coords = c("lon", "lat"), crs = "EPSG:4326") %>%
-#'   match_meow()
-match_meow <- function(df){
+#'   match_MEOW()
+match_MEOW <- function(df){
 
   spald <- utils4mme::meow %>%
     sf::st_transform(sf::st_crs(df)) # Transform to the projection of the input

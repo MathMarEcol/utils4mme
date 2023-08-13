@@ -11,8 +11,8 @@
 #' df <- data.frame(lon = c(150, 160),
 #'                  lat = c(-32, -38)) %>%
 #'   sf::st_as_sf(coords = c("lon", "lat"), crs = "EPSG:4326") %>%
-#'   match_longhurst()
-match_longhurst <- function(df){
+#'   match_Longhurst()
+match_Longhurst <- function(df){
 
   longh <- utils4mme::longhurst %>%
     sf::st_transform(sf::st_crs(df)) # Transform to the projection of the input

@@ -9,7 +9,7 @@
 #'
 #' @examples
 #' @importFrom rlang .data
-Get_FishCost <- function(PlanUnits,
+match_FishCost <- function(PlanUnits,
                                   group = "all",
                                   Direc = file.path("~", "SpatPlan_Data")){
 

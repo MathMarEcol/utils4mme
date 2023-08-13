@@ -1,0 +1,26 @@
+url: https://mathmarecol.github.io/utils4mme
+template:
+  bootstrap: 5
+articles:
+development:
+  destination:
+  version_label: info
+  version_tooltip: "The package is in the early stages of development. Use with caution."
+reference:
+
+- title: Match data to Planning Units
+  desc:  Functions to match data (internal and exteral) to planning units
+- contents:
+  - starts_with("match_")
+
+- title: Utilities
+  desc: Other useful utilities
+- contents:
+  - untibble
+  - harmonic
+
+- title: Built in datasets
+  contents:
+  - longhurst
+  - meow
+
