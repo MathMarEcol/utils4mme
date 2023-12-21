@@ -20,8 +20,8 @@ match_Longhurst <- function(df){
   nr <- sf::st_nearest_feature(df, longh)
 
   LPs <- df %>%
-    dplyr::mutate(ProvCode = longh$ProvCode[nr],
-                  ProvDescr = longh$ProvDescr[nr])
+    dplyr::mutate(ProvCode = factor(longh$ProvCode[nr]),
+                  ProvDescr = factor(longh$ProvDescr[nr]))
 
   return(LPs)
 }
