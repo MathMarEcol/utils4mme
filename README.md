@@ -19,19 +19,7 @@ maintain the package, but the author of the individual functions are
 indicated in the function help.
 
 Some functions in this package will work for all users, but many will
-require access to the UQ Research Data Manager (RDM). For the funcations
-that require UQ data, you will need to download and expand
-`MME1DATA-Q1215/SpatialPlanning/SpatPlan_Data.zip`. To use the
-`utils4mme` package defaults, expand this file into your home directory
-(e.g. `/Users/jason/SpatPlan_Data`).
-
-You can use any location you want, but you will need to specify the
-location for some functions, as per the function help. **Note:** The
-download is only 2GB, but the expanded data is 35 GB in size. If you
-need help subsetting the data to your region due to memory or HD space
-constraints, contact the developers. If you run into memory problems,
-you can try increasing the amount of the HD space gdal is allowed to
-use. `Sys.setenv(GDAL_MAX_BAND_COUNT = 120000)`
+require access to lab datasets.
 
 ## Installation
 
