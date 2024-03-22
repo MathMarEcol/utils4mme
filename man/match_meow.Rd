@@ -16,8 +16,7 @@ An \code{sf} dataframe with additional MEOW columns (\code{EcoRegion}, \code{Pro
 A function that assigns Spalding's Marine Ecoregions and description to each spatial feature.
 }
 \examples{
-df <- data.frame(lon = c(150, 160),
-                 lat = c(-32, -38)) \%>\%
-  sf::st_as_sf(coords = c("lon", "lat"), crs = "EPSG:4326") \%>\%
+out <- utils4mme::PUs_Tasman \%>\%
   match_MEOW()
+
 }
