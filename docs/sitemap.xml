@@ -16,6 +16,9 @@
     <loc>https://mathmarecol.github.io/utils4mme/index.html</loc>
   </url>
   <url>
+    <loc>https://mathmarecol.github.io/utils4mme/reference/PUs_Tasman.html</loc>
+  </url>
+  <url>
     <loc>https://mathmarecol.github.io/utils4mme/reference/get_landMask.html</loc>
   </url>
   <url>
@@ -41,6 +44,9 @@
   </url>
   <url>
     <loc>https://mathmarecol.github.io/utils4mme/reference/meow.html</loc>
+  </url>
+  <url>
+    <loc>https://mathmarecol.github.io/utils4mme/reference/mme_make_valid.html</loc>
   </url>
   <url>
     <loc>https://mathmarecol.github.io/utils4mme/reference/pipe.html</loc>

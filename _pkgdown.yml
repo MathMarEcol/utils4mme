@@ -19,9 +19,11 @@ reference:
   - untibble
   - harmonic
   - get_landMask
+  - mme_make_valid
 
 - title: Built in datasets
   contents:
   - longhurst
   - meow
+  - PUs_Tasman
 
