@@ -17,6 +17,6 @@
 
 
   
-Num2Radians <- function(Number, Max){
-  Num2Radians = (Number/Max) * 2 * pi
+num2radians <- function(Number, Max){
+  num2radians = (Number/Max) * 2 * pi
 }
