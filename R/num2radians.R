@@ -6,7 +6,6 @@
 #' @param Number A numeric variable
 #' @param Max A numeric variable for the maximum possible value of the variable (note that this might be larger than in the observations).
 #'
-#' @return An `sf` dataframe with additional longhurst columns (`ProvCode`, `ProvDescr`)
 #' @export Num2Radians A numeric variable in radians
 #'
 #' @examples
@@ -15,8 +14,6 @@
 #' Num2Radians(df$Number, Max)
 
 
-
-  
 num2radians <- function(Number, Max){
   num2radians = (Number/Max) * 2 * pi
 }
