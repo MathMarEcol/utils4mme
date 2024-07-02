@@ -1,19 +1,16 @@
 #' Convert a number to radians (e.g., for day of year or time of day).
 #'
 #' A function that converts a number (e.g., for day of year or time of day) to radians, usually needed before using the harmnonic function in statistical models.
-#' # Anthony J. Richardson 21/6/24.
-#' 
+#'
 #' @param Number A numeric variable
 #' @param Max A numeric variable for the maximum possible value of the variable (note that this might be larger than in the observations).
 #'
-#' @export Num2Radians A numeric variable in radians
+#' @export
+#'
+#' @author Anthony J. Richardson
 #'
 #' @examples
-#' df <- df <- data.frame(Number = runif(10, 1, 365))
-#' Max <- 365
-#' Num2Radians(df$Number, Max)
-
-
-num2radians <- function(Number, Max){
-  num2radians = (Number/Max) * 2 * pi
+#' num2radians(runif(10, 1, 365))
+num2radians <- function(Number, Max = 365){
+  (Number/Max) * 2 * pi
 }
