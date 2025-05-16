@@ -16,8 +16,10 @@ An \code{sf} dataframe with additional longhurst columns (\code{ProvCode}, \code
 A function that assigns the Longhurst province and description to each spatial feature.
 }
 \examples{
-df <- data.frame(lon = c(150, 160),
-                 lat = c(-32, -38)) \%>\%
+df <- data.frame(
+  lon = c(150, 160),
+  lat = c(-32, -38)
+) \%>\%
   sf::st_as_sf(coords = c("lon", "lat"), crs = "EPSG:4326") \%>\%
   match_Longhurst()
 }

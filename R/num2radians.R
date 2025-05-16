@@ -11,6 +11,6 @@
 #'
 #' @examples
 #' num2radians(runif(10, 1, 365))
-num2radians <- function(Number, Max = 365){
-  (Number/Max) * 2 * pi
+num2radians <- function(Number, Max = 365) {
+  (Number / Max) * 2 * pi
 }

@@ -11,7 +11,7 @@
 #' df <- tibble::tibble(x = c(1, 2), y = c("January", "February")) %>%
 #'   untibble()
 #' class(df)
-untibble <- function (tibble) {
+untibble <- function(tibble) {
   df <- data.frame(unclass(tibble), check.names = FALSE, stringsAsFactors = FALSE)
   return(df)
-}  ## escape the nonsense
+} ## escape the nonsense

@@ -8,12 +8,12 @@
 #' @export
 #'
 #' @examples
-#' theta = 2
-#' k = 1
+#' theta <- 2
+#' k <- 1
 #' df <- harmonic(theta = 2, k = 1)
-harmonic <- function (theta, k = 4) {
+harmonic <- function(theta, k = 4) {
   X <- matrix(0, length(theta), 2 * k)
-  nam <- as.vector(outer(c("c", "s"), 1:k, paste, sep  = ""))
+  nam <- as.vector(outer(c("c", "s"), 1:k, paste, sep = ""))
   dimnames(X) <- list(names(theta), nam)
   m <- 0
   for (j in 1:k) {

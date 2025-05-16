@@ -8,7 +8,7 @@ Description: A collection of utilities developed by and for the Mathematical Mar
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Imports: 
     data.table,
     dplyr,
@@ -18,11 +18,15 @@ Imports:
     rnaturalearth,
     sf,
     sfdct,
+    tidyr,
     terra,
     units
 Suggests:
+    rfishbase,
     rnaturalearthdata,
     tibble
 Depends: 
     R (>= 2.10)
+Remotes:
+    ropensci/rfishbase
 LazyData: true

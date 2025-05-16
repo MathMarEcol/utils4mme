@@ -1,4 +1,3 @@
-
 #' A function to fix incorrect column types from fishbase and sealifebase
 #'
 #' A function to fix incorrect column types from fishbase and sealifebase.
@@ -10,11 +9,10 @@
 #' @return The species dataframe with names corrected.
 #'
 #' @examples
-SpatPlan_fix_FBtype<- function(df, datab = "fishbase"){
-
-  if(datab == "fishbase"){ # Need to convert type of different columns depending on database
+SpatPlan_fix_FBtype <- function(df, datab = "fishbase") {
+  if (datab == "fishbase") { # Need to convert type of different columns depending on database
     nm <- c("SpecCode", "DepthRangeShallow", "CommonLength", "CommonLengthF", "LongevityWildRef", "MaxLengthRef", "DangerousRef")
-  } else if(datab == "sealifebase"){
+  } else if (datab == "sealifebase") {
     nm <- c("SpecCode", "SpeciesRefNo", "GenCode", "DepthRangeRef", "LongevityWildRef", "Weight")
   }
 
@@ -34,16 +32,16 @@ SpatPlan_fix_FBtype<- function(df, datab = "fishbase"){
 #' @examples
 #' SpatPlan_validate_FBNAs(data.frame(Species = "Thunnus maccoyii"))
 #' @importFrom rlang .data
-SpatPlan_validate_FBNAs <- function(spp, datab = "fishbase"){
+SpatPlan_validate_FBNAs <- function(spp, datab = "fishbase") {
   spp <- spp %>%
     dplyr::mutate(ValidSpecies = NA, valid = FALSE)
 
   # For some reason we are getting multiple names back for some species. Check which ones....
-  for (a in 1:dim(spp)[1]){
+  for (a in 1:dim(spp)[1]) {
     out <- rfishbase::validate_names(spp$Species[a], server = datab)
-    if (length(out) == 1 & is.na(out)){ # Maintain original name
+    if (length(out) == 1 & is.na(out)) { # Maintain original name
       spp$ValidSpecies[a] <- spp$Species[a]
-    } else if (length(out) == 1){
+    } else if (length(out) == 1) {
       spp$ValidSpecies[a] <- out[1]
       spp$valid[a] <- TRUE
     } else if (length(out) > 1) {
@@ -52,7 +50,7 @@ SpatPlan_validate_FBNAs <- function(spp, datab = "fishbase"){
       # Here we check if the name was in fact in the output
       out2 <- out[which(stringr::str_detect(out, spp$Species[a]))]
       spp$valid[a] <- TRUE
-      if (length(out2) == 1){ # Name existed in the original
+      if (length(out2) == 1) { # Name existed in the original
         spp$ValidSpecies[a] <- out2
       } else {
         spp$ValidSpecies[a] <- out[1] # Guess at the first one.
@@ -78,10 +76,9 @@ SpatPlan_validate_FBNAs <- function(spp, datab = "fishbase"){
 #'
 #' @examples
 #' @importFrom rlang .data
-Crop_AQM <- function(df, spp, extent){
-
+Crop_AQM <- function(df, spp, extent) {
   cropped <- df %>%
-    sf::st_crop(extent, crop = TRUE) %>%  # TODO replace ex_sf with a polygon to deal with EEZ or coastal areas
+    sf::st_crop(extent, crop = TRUE) %>% # TODO replace ex_sf with a polygon to deal with EEZ or coastal areas
     stars:::slice.stars(along = "band", index = spp$SpeciesIDNum) %>% # indexes rows based on SpeciesIDNum
     stars::st_as_stars() %>% # loads it into memory
     stars::st_set_dimensions("band", values = spp$longnames) %>%
@@ -95,8 +92,9 @@ Crop_AQM <- function(df, spp, extent){
   nc <- ncol(cropped) - 1 # Number of cols not including geometry
 
   cropped <- cropped %>%
-    dplyr::filter({rs == nc} == FALSE) # Remove Rows with all NAs (except geometry)
+    dplyr::filter({
+      rs == nc
+    } == FALSE) # Remove Rows with all NAs (except geometry)
 
   return(cropped)
 }
-
